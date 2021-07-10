@@ -1,3 +1,0 @@
-#WELCOME TO BASIC CORE PROGRAM
-##JAVA 
-##Flip_Coin_Program
