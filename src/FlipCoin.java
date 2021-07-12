@@ -1,24 +1,27 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class FlipCoin {
     public static void main(String[] args) {
-        System.out.println("###FLIP COIN AND WIN ###");
-        Random randomNum=new Random();
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter how many Time you want to flip  coin ");
+        int numofFlip = s.nextInt();
 
-         enum coin{Head,Tail}
-        int result;
-        int Head=1;
-        int Tail=0;
-        coin coinFlip;
-         void flip{
-            result =randomNum.nextInt(2);
-            if (result== 1){
-                coinFlip= coin.Head;
-                System.out.println("Head ");
-            }else {
-                System.out.println("Tail");
+        if (numofFlip < 0) {
+            System.out.println("Please Provide Positive integer ");
+
+        } else {
+            int numofHead = 0;
+            for (int i = 1; i < numofFlip; i++) {
+                if (Math.random() > 0.5) {
+                    numofHead++;
+
+                }
             }
 
-            }
+            double percentofHead = (numofHead * 100) / numofFlip;
+            double percentofTails = 100 - percentofHead;
+            System.out.println("heads perecentage : " + percentofHead);
+            System.out.println("Tails perecentage : " + percentofTails);
+        }
     }
 }
